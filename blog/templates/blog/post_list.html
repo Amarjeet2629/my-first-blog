@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Blog</title>
+	<title>MyBlog</title>
 </head>
 <body>
-<div> Published on : 22 March 2019 , 08:38:41 am</div>
-<h1> <a href="">Django Girls Blog</a></h1>
+<h1> <a href=""> Django Girls</a></h1>
 <div>
-   <h2><a href="">My First Blog</a> </h2>
-   <p>My present state of world is shit !!!!!!!!!!</p>
-</div>
-<div>
-	<h2><a href="">My second Blog</a>
-	</h2>
-	<p>I try so hard and got so far in the end .</p>
+	{% for p in posts %}
+	  <h2><a href="">{{p.title}}</a></h2>
+	  <p>{{   p.text| linebreaksbr }}</p>
+      <p>Published : {{p.published_date}}</p>
+	 {% endfor %}
 </div>
 </body>
 </html>
